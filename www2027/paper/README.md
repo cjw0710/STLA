@@ -14,7 +14,7 @@ references and an optional appendix within the twelve-page total limit.
 
 Current compiled artifact: `D:\DeDiff\output\pdf\STLA_WWW2027_submission.pdf`
 (9 pages: 8 main + 1 full references page, with no appendix; SHA-256
-`5fc8a28f7a5eeb57bbc0729e753e89139f323920b4dea4c4a3e24a3c4c677fbc`).
+`44c02a21cf3f575125a6e07911ec9c179648b8dce597bb39a6df12e2a1e9155b`).
 
 Compile with the portable TinyTeX installation:
 
