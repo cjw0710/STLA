@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "formula-faithful candidate; not a reproduced paper result",
+  "data_protocol": {
+    "split_ratios": [0.8, 0.1, 0.1],
+    "preserve_equal_timestamp_ties": true,
+    "checkpoint_metric": "validation_map@100",
+    "test_access": "one pass after configuration freeze",
+    "candidate_policy": "real users not already present in the cascade prefix",
+    "graph_history": "training-period observations only"
+  },
+  "model": {
+    "dimension": 64,
+    "rank_candidates": [8, 16, 32],
+    "default_engineering_rank": 16,
+    "gcn_layers": 1,
+    "attention_heads": 10,
+    "attention_head_dimension": 64,
+    "attention_resolution": "follow the printed d-by-d per-head projections; scale by sqrt(head_dimension), because printed d/B is non-integral for d=64 and B=10",
+    "graph_view_fusion": "concatenate interaction/social embeddings, then project from 2d to d",
+    "social_distance_bins": 32,
+    "time_interval_bins": 32,
+    "sample_hop": 2,
+    "dropout": 0.3
+  },
+  "optimization": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0005,
+    "weight_decay": 0.01,
+    "batch_size": 64,
+    "loss_weight_candidates": [0.01, 0.1, 1.0],
+    "popularity_target": "smoothed real-user activation frequency from training cascades only",
+    "kl_direction": "prediction_to_popularity_target",
+    "disagreement_default": "printed_unhinged",
+    "disagreement_corrected_ablation": "hinged"
+  },
+  "compatibility": {
+    "legacy_dense_A_times_D": false,
+    "legacy_test_selected_checkpoint": false,
+    "legacy_eos_metric": false,
+    "legacy_reversed_graph_channel_names": false
+  }
+}

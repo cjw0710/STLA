@@ -1,0 +1,45 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.venv/
+venv/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local datasets and trained weights
+dataset/
+checkpoint/
+www2027/checkpoints/
+www2027/artifacts/
+*.pt
+*.pth
+*.bin
+*.npy
+
+# Downloaded third-party archives
+www2027/third_party/*.zip
+www2027/third_party/buzzbloom/data/
+
+# Generated outputs and temporary QA renders
+output/
+tmp/
+*.xlsx
+www2027/paper/main.pdf
+www2027/paper/figures/qa*.png
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
